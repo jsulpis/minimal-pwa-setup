@@ -19,3 +19,18 @@ ul {
   text-align: left;
   line-height: 1.5;
 }
+
+img {
+  border-radius: 6px;
+  width: 90%;
+  max-width: 500px;
+  margin-top: 2rem;
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+.img-legend {
+  opacity: 0.8;
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
