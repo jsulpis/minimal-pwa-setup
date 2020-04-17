@@ -48,9 +48,18 @@
     <img src="./images/lighthouse-score.png" alt="lighthouse score">
     <p class="img-legend">Lighthouse score</p>
 
-    <button id="butInstall" aria-label="Install" hidden>Install</button>
+    <button id="installButton" aria-label="Install" hidden>Install</button>
 
+    <p id="congratsMessage" hidden>The application now runs in standalone mode. Congrats !</p>
+    
+    <script src="./scripts/install.js"></script>
     <script>
+      const isRunningStandalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+      if (isRunningStandalone) {
+        console.log("The application is running in standalone mode.");
+        document.getElementById("congratsMessage").removeAttribute("hidden");
+      }
+      
       // Register the service worker if available
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
@@ -59,7 +68,6 @@
           .catch((err) => console.error("Service worker registration failed:", err))
         });
       }
-    </script>
-    <script src="./scripts/install.js"></script>
+      </script>
   </body>
 </html>
