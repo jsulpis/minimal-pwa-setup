@@ -4,11 +4,13 @@ const FILES_TO_CACHE = [
   "./",
   "./index.html",
   "./styles/style.css",
+  "./scripts/install.js",
   "./manifest.json",
-  "./images/lightning-icon-16x16.png",
-  "./images/lightning-icon-32x32.png",
-  "./images/lightning-icon-128x128.png",
-  "./images/lightning-icon-512x512.png",
+  "./images/icons/lightning-icon-16x16.png",
+  "./images/icons/lightning-icon-32x32.png",
+  "./images/icons/lightning-icon-128x128.png",
+  "./images/icons/lightning-icon-512x512.png",
+  "./images/lighthouse-score.png",
 ];
 
 self.addEventListener("install", async () => {
