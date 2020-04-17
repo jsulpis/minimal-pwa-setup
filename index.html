@@ -3,8 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A minimal PWA" />
     <title>My Awesome PWA</title>
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <!-- Meta description for SEO -->
+    <meta name="description" content="A minimal PWA setup." />
+
+    <!-- See Stackoverflow post about favicon dimensions: https://stackoverflow.com/a/23734416 -->
+    <link rel="icon" type="image/png" href="/images/lightning-icon-x512.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="/images/lightning-icon-128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="/images/lightning-icon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/lightning-icon-32x32.png" sizes="32x32">
+
+    <!-- iOS meta tags and icons: more information here https://apple.co/2KgEhRO -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Awesome PWA" />
+    <link rel="apple-touch-icon" href="/images/lightning-icon-x512.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="/images/lightning-icon-128x128.png" sizes="128x128">
+    <link rel="apple-touch-icon" href="/images/lightning-icon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/images/lightning-icon-32x32.png" sizes="32x32">
+    
+    <!-- Link to the manifest -->
+    <link rel="manifest" href="/manifest.json">
   </head>
   <body>
     <h1>Hi, I'm a Progressive Web Application (PWA)</h1>
@@ -20,28 +41,4 @@
       <li>I am lightning fast thanks to the cache storage.</li>
     </ul>
   </body>
-  <style>
-    html,
-    body {
-      height: 90%;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
-      background-color: #eee;
-    }
-
-    ul {
-      text-align: left;
-      line-height: 1.5;
-    }
-  </style>
 </html>
