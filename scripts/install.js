@@ -33,6 +33,5 @@ function installPWA(e) {
 
 // Log something if the user installed the app
 window.addEventListener("appinstalled", (e) => {
-  document.getElementById("congratsMessage").removeAttribute("hidden");
   console.log("The application was installed.", e);
 });
