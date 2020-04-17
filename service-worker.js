@@ -1,6 +1,15 @@
 const CACHE_NAME = "cache-v1";
 
-const FILES_TO_CACHE = ["/", "/index.html", "/styles/style.css"];
+const FILES_TO_CACHE = [
+  "./",
+  "./index.html",
+  "./styles/style.css",
+  "./manifest.json",
+  "./images/lightning-icon-16x16.png",
+  "./images/lightning-icon-32x32.png",
+  "./images/lightning-icon-128x128.png",
+  "./images/lightning-icon-512x512.png",
+];
 
 self.addEventListener("install", async () => {
   console.log("[ServiceWorker]: Install");
@@ -27,3 +36,30 @@ self.addEventListener("activate", async () => {
   );
   self.clients.claim();
 });
+
+// Interceptor for all network requests
+self.addEventListener("fetch", async (evt) => {
+  const request = evt.request;
+  console.log("[ServiceWorker]: Intercepting request to ", request.url);
+
+  // Using the cache-first strategy for simplicity.
+  // You might want to consider other strategies such as stale-while-revalidate (see https://web.dev/stale-while-revalidate/)
+  evt.respondWith(cacheFirst(request));
+});
+
+// Returns the cached response if available, or get the response from the network
+async function cacheFirst(request) {
+  const cache = await caches.open(CACHE_NAME);
+  cachedResponse = await cache.match(request);
+  if (!!cachedResponse) {
+    console.log(
+      `[ServiceWorker]: Found the response for ${request.url} in the cache.`
+    );
+    return cachedResponse;
+  }
+
+  console.log(
+    `[ServiceWorker]: Fetching the response for ${request.url} from the network.`
+  );
+  return fetch(request);
+}
