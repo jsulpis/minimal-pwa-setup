@@ -3,8 +3,8 @@
   "short_name": "Awesome PWA",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#F3BC17",
-  "theme_color": "#F79019",
+  "background_color": "#FFD65C",
+  "theme_color": "#F3BC17",
   "icons": [
     {
       "src": "./images/lightning-icon-16x16.png",
